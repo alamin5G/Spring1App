@@ -11,12 +11,8 @@ public class App
     public static void main( String[] args )
     {
     	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/goonok/Spring1App/beans.xml");
-    	Action action = context.getBean("action", Action.class);
-    	action.eat();
-    	action.read();
-    	action.sleep();
-    	
-    	
+    	Student st = context.getBean("st2", Student.class);    	
+    	System.out.println(st);
     	
     	
     	
