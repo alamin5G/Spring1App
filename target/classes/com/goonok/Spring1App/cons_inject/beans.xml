@@ -15,7 +15,7 @@
     http://www.springframework.org/schema/tx/spring-tx.xsd">     
 
 	<bean name="student" class="com.goonok.Spring1App.cons_inject.Student">
-		<constructor-arg value="1" type="int"/>
+		<constructor-arg value="1" type="int" index="0"/>
 		<constructor-arg value="Tongi" />
 	</bean>
 	
