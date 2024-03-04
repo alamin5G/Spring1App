@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx.xsd">     
+
+	<bean id="st1" class="com.goonok.Spring1App.collection.Student">
+		<property name="name" value="Alamin"></property>
+		<property name="address">
+			<list>
+				<value>Bangladesh</value>
+				<value>Pakistan</value>
+			</list>
+		</property>
+		<property name="phoneNo">
+			<set>
+				<value>123</value>
+				<value>567</value>
+			</set>
+		</property>
+		<property name="course">
+			<map>
+				<entry key="java" value="2months"></entry>
+				<entry key="spring" value="6months"></entry>
+			</map>
+		</property>
+	</bean>	
+	
+	
+</beans>
