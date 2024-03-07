@@ -5,8 +5,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "com.goonok.Spring1App.javaconfig")
+//@ComponentScan(basePackages = "com.goonok.Spring1App.javaconfig")
 public class Config {
 
-	
+	@Bean
+	Employee employee(){
+		
+		return new Employee();
+		
+	}
 }

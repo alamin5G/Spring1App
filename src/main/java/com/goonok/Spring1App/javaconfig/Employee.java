@@ -10,7 +10,7 @@ public class Employee {
 	private String name;
 	@Value("21303134")
 	private String id;
-	@Value("26")
+	@Value("28")
 	private int age;
 
 	public String getName() {
