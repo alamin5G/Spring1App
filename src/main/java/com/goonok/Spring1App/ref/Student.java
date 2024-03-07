@@ -1,9 +1,16 @@
 package com.goonok.Spring1App.ref;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Student {
   
 	private String name;
+	
+	@Autowired
+	@Qualifier("address2")
 	private Address address;
+	
 	public String getName() {
 		return name;
 	}

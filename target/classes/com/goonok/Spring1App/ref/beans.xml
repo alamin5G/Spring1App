@@ -14,14 +14,22 @@
     http://www.springframework.org/schema/tx 
     http://www.springframework.org/schema/tx/spring-tx.xsd">     
 
+	<context:annotation-config/>
+
+
 	<bean name="address" class="com.goonok.Spring1App.ref.Address">
 		<property name="city" value="Tongi"></property>
 		<property name="district" value="Gazipur"></property>
 	</bean>
 	
+	<bean name="address2" class="com.goonok.Spring1App.ref.Address">
+		<property name="city" value="Uttara"></property>
+		<property name="district" value="Dhaka"></property>
+	</bean>
+	
 	<bean name="student" class="com.goonok.Spring1App.ref.Student">
 		<property name="name" value="Md. Alamin"></property>
-		<property name="address" ref="address"></property>
+		
 	</bean>
 		
 	</beans>
