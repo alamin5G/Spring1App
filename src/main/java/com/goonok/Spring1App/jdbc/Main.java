@@ -2,7 +2,7 @@ package com.goonok.Spring1App.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -57,18 +57,31 @@ public class Main {
 		 * " row deleted succesfully!");
 		 */
 		
-		//fetch or retrive data from the database table
+		//fetch or retrive data from the database table by id
+		/*
+		 * String sql = "select * from st_info where id = ?"; RowMapper rowMapper = new
+		 * RowMapper() {
+		 * 
+		 * public Object mapRow(ResultSet rs, int rowNum) throws SQLException { String
+		 * name = rs.getString(2); //column num return name; } }; String name = (String)
+		 * jdbc.queryForObject(sql, rowMapper, 4); //2 for row number
+		 * System.out.println(name);
+		 */
 		
-		String sql = "select * from st_info where id = ?";
-		RowMapper rowMapper = new RowMapper() {
+		String sql = "select * from st_info";
+		RowMapper rowMap = new RowMapper() {
 
+			@Override
 			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-				String name = rs.getString(2);	//column num
+				// TODO Auto-generated method stub
+				String name = rs.getString(2);
 				return name;
 			}
 		};
-		String name = (String) jdbc.queryForObject(sql, rowMapper, 4); //2 for row number
-		System.out.println(name);
+		List<String> list = jdbc.query(sql, rowMap);
+		for(String st : list) {
+			System.out.println(st);
+		}
 		
 	}
 }
