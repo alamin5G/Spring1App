@@ -9,6 +9,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
+import com.goonok.Spring1App.jdbc.model.Model;
+import com.goonok.Spring1App.jdbc.modelDAO.StudentDaoImpl;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -68,20 +71,26 @@ public class Main {
 		 * System.out.println(name);
 		 */
 		
-		String sql = "select * from st_info";
-		RowMapper rowMap = new RowMapper() {
-
-			@Override
-			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-				// TODO Auto-generated method stub
-				String name = rs.getString(2);
-				return name;
-			}
-		};
-		List<String> list = jdbc.query(sql, rowMap);
-		for(String st : list) {
-			System.out.println(st);
-		}
+		
+		/*
+		 * String sql = "select * from st_info"; RowMapper rowMap = new RowMapper() {
+		 * 
+		 * @Override public Object mapRow(ResultSet rs, int rowNum) throws SQLException
+		 * { // TODO Auto-generated method stub String name = rs.getString(2); return
+		 * name; } }; List<String> list = jdbc.query(sql, rowMap); for(String st : list)
+		 * { System.out.println(st); }
+		 */
+		
+		StudentDaoImpl dao = context.getBean("studentDaoImpl", StudentDaoImpl.class);
+		Model model = new Model();
+		model.setId(2);
+		model.setName("Rahim");
+		model.setAddress("Kazipara, Mirpur");
+		model.setPhone("01928374342");
+		
+		int rowAffected = dao.insert(model);
+		System.out.println(rowAffected + " data inserted succesfully");
+		
 		
 	}
 }

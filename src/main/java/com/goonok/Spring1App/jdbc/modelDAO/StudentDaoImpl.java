@@ -14,6 +14,14 @@ public class StudentDaoImpl implements StudentDAO{
 	private JdbcTemplate jdbcTemplate;
 	
 	
+	public JdbcTemplate getJdbcTemplate() {
+		return jdbcTemplate;
+	}
+
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+
 	@Override
 	public int insert(Model model) {
 

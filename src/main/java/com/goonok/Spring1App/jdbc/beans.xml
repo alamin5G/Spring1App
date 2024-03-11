@@ -25,4 +25,9 @@
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
+	<bean name="studentDaoImpl" class="com.goonok.Spring1App.jdbc.modelDAO.StudentDaoImpl" >
+		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+		
+	</bean>
+	
 </beans>
