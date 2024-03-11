@@ -106,8 +106,13 @@ public class Main {
 		 * " data deleted succesfully");
 		 */
 		
-		Model model = dao.getModelById(1);
-		System.out.println(model.toString());
+		/*
+		 * Model model = dao.getModelById(1); System.out.println(model.toString());
+		 */
 		
+		List<Model> list = dao.getAllModel();
+		for(Model m : list) {
+			System.out.println(m);
+		}
 	}
 }
