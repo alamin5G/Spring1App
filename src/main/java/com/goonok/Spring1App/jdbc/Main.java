@@ -101,9 +101,13 @@ public class Main {
 		 * " data updated succesfully");
 		 */
 		
-		int rowAffected = dao.delete(2);
-		System.out.println(rowAffected + " data deleted succesfully");
+		/*
+		 * int rowAffected = dao.delete(2); System.out.println(rowAffected +
+		 * " data deleted succesfully");
+		 */
 		
-
+		Model model = dao.getModelById(1);
+		System.out.println(model.toString());
+		
 	}
 }
