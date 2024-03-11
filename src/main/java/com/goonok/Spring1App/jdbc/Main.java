@@ -93,14 +93,17 @@ public class Main {
 		 */
 
 		
-		  Model model = new Model(); model.setId(2); 
-		  model.setName("Rahim Uddin");
-		  model.setAddress("Kazipara, Mirpur-1230"); 
-		  model.setPhone("01928374344");
-		  
-		  int rowAffected = dao.updateDetails(model); 
-		  System.out.println(rowAffected + " data updated succesfully");
-		 
+		/*
+		 * Model model = new Model(); model.setId(2); model.setName("Rahim Uddin");
+		 * model.setAddress("Kazipara, Mirpur-1230"); model.setPhone("01928374344");
+		 * 
+		 * int rowAffected = dao.updateDetails(model); System.out.println(rowAffected +
+		 * " data updated succesfully");
+		 */
+		
+		int rowAffected = dao.delete(2);
+		System.out.println(rowAffected + " data deleted succesfully");
+		
 
 	}
 }
