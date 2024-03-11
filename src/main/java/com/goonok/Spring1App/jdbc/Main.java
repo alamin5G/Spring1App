@@ -16,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/goonok/Spring1App/jdbc/beans.xml");
-		JdbcTemplate jdbc =  context.getBean("jdbcTemplate", JdbcTemplate.class);
+		JdbcTemplate jdbc = context.getBean("jdbcTemplate", JdbcTemplate.class);
 		try {
 			System.out.println(jdbc.getDataSource().getConnection());
 			/*
@@ -29,16 +29,17 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		/*
 		 * sql insert
-		 
-		String insertSql = "insert into st_info(id, name, address, phone)values(?, ?, ?, ?)";
-		int rowAffected = jdbc.update(insertSql, 5, "Rakib", "Uttara, Dhaka", "01581733764");
-		System.out.println("Total " + rowAffected + " row inserted int to the st_info table");
-		*/
-		
-		
+		 * 
+		 * String insertSql =
+		 * "insert into st_info(id, name, address, phone)values(?, ?, ?, ?)"; int
+		 * rowAffected = jdbc.update(insertSql, 5, "Rakib", "Uttara, Dhaka",
+		 * "01581733764"); System.out.println("Total " + rowAffected +
+		 * " row inserted int to the st_info table");
+		 */
+
 		/*
 		 * sql update
 		 */
@@ -48,19 +49,19 @@ public class Main {
 		 * System.out.println("total " + rowsAffected +
 		 * " row data updated on table st_info");
 		 */
-		
+
 		/*
 		 * sql delete
 		 *
 		 */
-		
+
 		/*
 		 * String sqlDelete = "delete from st_info where id = ?"; int rowsAffected =
 		 * jdbc.update(sqlDelete, 5); System.out.println(rowsAffected +
 		 * " row deleted succesfully!");
 		 */
-		
-		//fetch or retrive data from the database table by id
+
+		// fetch or retrive data from the database table by id
 		/*
 		 * String sql = "select * from st_info where id = ?"; RowMapper rowMapper = new
 		 * RowMapper() {
@@ -70,8 +71,7 @@ public class Main {
 		 * jdbc.queryForObject(sql, rowMapper, 4); //2 for row number
 		 * System.out.println(name);
 		 */
-		
-		
+
 		/*
 		 * String sql = "select * from st_info"; RowMapper rowMap = new RowMapper() {
 		 * 
@@ -80,17 +80,27 @@ public class Main {
 		 * name; } }; List<String> list = jdbc.query(sql, rowMap); for(String st : list)
 		 * { System.out.println(st); }
 		 */
-		
+
+		// invoke the bean
 		StudentDaoImpl dao = context.getBean("studentDaoImpl", StudentDaoImpl.class);
-		Model model = new Model();
-		model.setId(2);
-		model.setName("Rahim");
-		model.setAddress("Kazipara, Mirpur");
-		model.setPhone("01928374342");
+
+		/*
+		 * Model model = new Model(); model.setId(2); model.setName("Rahim");
+		 * model.setAddress("Kazipara, Mirpur"); model.setPhone("01928374342");
+		 * 
+		 * int rowAffected = dao.insert(model); System.out.println(rowAffected +
+		 * " data inserted succesfully");
+		 */
+
 		
-		int rowAffected = dao.insert(model);
-		System.out.println(rowAffected + " data inserted succesfully");
-		
-		
+		  Model model = new Model(); model.setId(2); 
+		  model.setName("Rahim Uddin");
+		  model.setAddress("Kazipara, Mirpur-1230"); 
+		  model.setPhone("01928374344");
+		  
+		  int rowAffected = dao.updateDetails(model); 
+		  System.out.println(rowAffected + " data updated succesfully");
+		 
+
 	}
 }

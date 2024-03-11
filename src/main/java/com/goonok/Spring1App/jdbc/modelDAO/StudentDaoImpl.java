@@ -33,8 +33,8 @@ public class StudentDaoImpl implements StudentDAO{
 
 	@Override
 	public int updateDetails(Model model) {
-		String sql = "UPDATE st_info set name =? , address=? where id = ?";
-		int rowsAffected = jdbcTemplate.update(sql, model.getName(), model.getAddress(), model.getId());
+		String sql = "UPDATE st_info set name =? , address=?, phone = ? where id = ?";
+		int rowsAffected = jdbcTemplate.update(sql, model.getName(), model.getAddress(), model.getPhone(), model.getId());
 		return rowsAffected;
 	}
 
