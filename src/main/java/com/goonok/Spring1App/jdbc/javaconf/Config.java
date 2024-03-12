@@ -9,6 +9,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+import com.goonok.Spring1App.jdbc.modelDAO.StudentDAO;
+import com.goonok.Spring1App.jdbc.modelDAO.StudentDaoImpl;
+
 @Configuration
 public class Config {
 
@@ -28,5 +31,12 @@ public class Config {
 		JdbcTemplate jdbc = new JdbcTemplate();
 		jdbc.setDataSource(dataSource());
 		return jdbc;
+	}
+	
+	@Bean
+	public StudentDAO studentDAO() {
+		StudentDaoImpl daoImpl = new StudentDaoImpl();
+		daoImpl.setJdbcTemplate(jdbcTemplate());
+		return daoImpl;
 	}
 }
