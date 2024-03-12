@@ -30,14 +30,20 @@ public class Main {
 		
 		StudentDaoImpl dao = context.getBean("studentDAO",StudentDaoImpl.class);
 		
-		Model model = new Model();
-		model.setId(4);
-		model.setName("Rahim");
-		model.setAddress("Dattapara, Tongi");
-		model.setPhone("01385676861");
+		/*
+		 * Model model = new Model(); model.setId(4); model.setName("Rahim");
+		 * model.setAddress("Dattapara, Tongi"); model.setPhone("01385676861");
+		 * 
+		 * int rowAffected = dao.insert(model); System.out.println(rowAffected +
+		 * " data inserted successfully!");
+		 */
 		
-		int rowAffected = dao.insert(model);
-		System.out.println(rowAffected + " data inserted successfully!");
 		
+		/*
+		 * Model model = new Model(); model.setId(4); model.setName("Rahim Uddin");
+		 * model.setAddress("Dottopara, Tongi West"); model.setPhone("01385575861"); int
+		 * rowAffected = dao.updateDetails(model); System.out.println(rowAffected +
+		 * " data inserted successfully!");
+		 */
 	}
 }
