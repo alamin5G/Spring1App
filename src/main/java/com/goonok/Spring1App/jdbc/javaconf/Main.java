@@ -28,7 +28,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		StudentDaoImpl dao = context.getBean("studentDAO",StudentDaoImpl.class);
+		StudentDaoImpl dao = context.getBean("studentDaoImpl",StudentDaoImpl.class);
 		
 		/*
 		 * Model model = new Model(); model.setId(4); model.setName("Rahim");
@@ -45,5 +45,8 @@ public class Main {
 		 * rowAffected = dao.updateDetails(model); System.out.println(rowAffected +
 		 * " data inserted successfully!");
 		 */
+		
+		Model m = dao.getModelById(3);
+		System.out.println(m);
 	}
 }
